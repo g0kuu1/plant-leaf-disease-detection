@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="container-fluid py-5">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="row mb-5">
+            <div class="col-md-8 col-xl-6 text-center mx-auto">
+                <h2 class="display-5 fw-bold text-success">Leaf Disease Detection</h2>
+                <div class="border-top border-success w-25 mx-auto my-3"></div>
+                <p class="text-muted">
+                    Welcome to the Leaf Disease Detection Project, where AI helps protect crops from diseases, ensuring the sustainability of our food production.
+                </p>
+            </div>
+        </div>
+
+        <!-- Info Cards -->
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <!-- Model Card -->
+            <div class="col">
+                <div class="card border-success shadow-sm text-center h-100">
+                    <div class="card-body p-4">
+                        <div class="icon-wrapper mb-3">
+                            <div class="icon-circle bg-gradient-success text-white">
+                                <i class="bi bi-file-earmark-code-fill fs-3"></i>
+                            </div>
+                        </div>
+                        <h4 class="card-title text-success fw-bold">Model</h4>
+                        <p class="card-text text-muted">
+                            We meticulously chose a ResNet-18 model, refining it with a tailor-made dataset, yielding a remarkable 98% accuracy, showcasing our commitment to excellence in AI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supplement Card -->
+            <div class="col">
+                <div class="card border-success shadow-sm text-center h-100">
+                    <div class="card-body p-4">
+                        <div class="icon-wrapper mb-3">
+                            <div class="icon-circle bg-gradient-success text-white">
+                                <i class="bi bi-bag-plus fs-3"></i>
+                            </div>
+                        </div>
+                        <h4 class="card-title text-success fw-bold">Supplement</h4>
+                        <p class="card-text text-muted">
+                            We have implemented a specialized route that consolidates an extensive selection of disease-related supplements. By leveraging our disease recognition system, users can effortlessly access precise product links once they identify the specific leaf ailment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChatBot Card -->
+            <div class="col">
+                <div class="card border-success shadow-sm text-center h-100">
+                    <div class="card-body p-4">
+                        <div class="icon-wrapper mb-3">
+                            <div class="icon-circle bg-gradient-success text-white">
+                                <i class="bi bi-chat fs-3"></i>
+                            </div>
+                        </div>
+                        <h4 class="card-title text-success fw-bold">ChatBot</h4>
+                        <p class="card-text text-muted">
+                            We have seamlessly integrated a sophisticated chatbot specialized in providing responses to inquiries related to diseases. This chatbot has undergone meticulous fine-tuning on a comprehensive dataset, ensuring its effectiveness and accuracy in delivering disease-related information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom styling for icon circles -->
+<style>
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #28a745, #2e8b57);
+        margin: 0 auto;
+    }
+</style>
+
+{% endblock %}

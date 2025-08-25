@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-4 py-xl-5" style="background-color: var(--bs-body-bg);">
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h2 class="display-5 fw-bold text-success mb-3">Diagnosis Result</h2>
+            <div class="border-top border-success w-25 mx-auto my-3"></div>
+        </div>
+    </div>
+
+    <div class="row gy-4">
+        <!-- Image Card -->
+        <div class="col-md-6">
+            <div class="card h-100 border-success shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h4 class="card-title mb-0">Uploaded Image</h4>
+                </div>
+                <div class="card-body text-center p-4">
+                    <img class="rounded img-fluid my-3 border border-2 border-success" style="max-height: 300px; object-fit: contain;" src="{{data.image}}">
+                    <div class="mt-4 p-3 rounded" style="background-color: var(--card-bg);">
+                        <h5 class="text-muted mb-2">Predicted Disease:</h5>
+                        <h3 class="text-danger fw-bold">{{data.prediction}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Column -->
+        <div class="col-md-6">
+            <!-- Description Card -->
+            <div class="card mb-4 border-success shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h4 class="card-title mb-0">Brief Description</h4>
+                </div>
+                <div class="card-body">
+                    <div class="p-3 rounded" style="background-color: var(--card-bg);">
+                        <p class="card-text" style="text-align: justify; line-height: 1.6;">{{data.discrption}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prevention Card -->
+            <div class="card mb-4 border-success shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h4 class="card-title mb-0">Prevention Steps</h4>
+                </div>
+                <div class="card-body">
+                    <div class="p-3 rounded" style="background-color: var(--card-bg);">
+                        <p class="card-text" style="text-align: justify; line-height: 1.6;">{{data.possible_step}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supplement Card -->
+            <div class="card border-success shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h4 class="card-title mb-0">Recommended Supplement</h4>
+                </div>
+                <div class="card-body text-center p-4">
+                    <div class="p-4 rounded" style="background-color: var(--card-bg);">
+                        <img class="my-3 img-thumbnail border-success" src="{{data.supplement_img}}" alt="supplement" width="150px">
+                        <h5 class="fw-bold text-success">{{data.supplement_name}}</h5>
+                        <a href="{{data.supplement_prod_link}}" class="btn btn-success mt-3 px-4 py-2 fw-bold" target="_blank">
+                            <i class="fas fa-shopping-cart me-2"></i>Buy Product
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .border-success {
+        border-color: #28a745 !important;
+    }
+    .text-success {
+        color: #28a745 !important;
+    }
+    .bg-success {
+        background-color: #28a745 !important;
+    }
+</style>
+{% endblock %}
