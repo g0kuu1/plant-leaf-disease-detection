@@ -15,3 +15,7 @@ pandas>=2.2.2
 torch>=2.5.0
 torchvision
 torchaudio
+transformers>=4.21.0
+accelerate>=0.20.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
