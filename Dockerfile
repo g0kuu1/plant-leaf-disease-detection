@@ -3,7 +3,7 @@ FROM python:3.10-slim
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies (if needed)
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
@@ -11,14 +11,14 @@ RUN apt-get update && apt-get install -y \
 # Copy requirements
 COPY requirements.txt .
 
-# Install Python dependencies (including Torch CPU wheels)
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . .
 
-# Expose port for Render
-EXPOSE 10000
+# Expose port (optional, match $PORT for clarity)
+EXPOSE 8080
 
-# Run your app
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:10000"]
+# Run app with Gunicorn, binding to Render's $PORT
+CMD ["sh", "-c", "gunicorn app:app --bind 0.0.0.0:$PORT"]
